@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import Editor from "./components/Editor";
+import React, { useState } from "react";
+import Viewer from "./components/Viewer";
+import "./styles/style.css";
 
-function App() {
+export default function App() {
+  const [value, setValue] = useState("");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="all">
+      <Editor onChange={setValue} value={value} />
+      <Viewer value={value} />
     </div>
   );
 }
-
-export default App;
