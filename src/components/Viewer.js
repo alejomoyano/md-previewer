@@ -1,11 +1,11 @@
 import React from "react";
-import "../styles/style.css";
 import ReactMarkdown from "react-markdown";
+import "../styles/App.css";
 
-export default function Viewer({ value }) {
+export function Viewer({ value }) {
   return (
-    <div className="split right">
-      <ReactMarkdown children={value} />
+    <div className="viewer-container">
+      <ReactMarkdown className="viewer" children={value} />
     </div>
   );
 }
